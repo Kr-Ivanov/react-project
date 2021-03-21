@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Category.css';
 
 
@@ -7,8 +8,9 @@ function Category({ title, img }) {
     return (
         <div className="category">
 
-
-            <img src={img} alt="Some photo" />
+            <Link to={`/categories/${title}`}>
+                <img src={img} alt="" />
+            </Link>
             <div className="category__title">
                 <p><strong>{title}</strong></p>
             </div>

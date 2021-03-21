@@ -1,20 +1,19 @@
 import React from 'react'
-import './product.css';
 
-function Product() {
+function OrderedProducts() {
     return (
         <div className="product">
             <div className="product__info">
-                <p>{/*title */}</p>
+                <p>{"Title"}</p>
                 <p className="product__price">
                     <strong>{/**price */}лв.</strong>
                 </p>
             </div>
             <img src="" alt="Some photo" />
-            <button>Add to Basket</button>
+            <p>{"X pcs."}</p>
 
         </div>
     )
 }
 
-export default Product
+export default OrderedProducts
