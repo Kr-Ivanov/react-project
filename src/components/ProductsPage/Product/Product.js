@@ -1,17 +1,32 @@
-
+import { useStateValue } from '../../../StateProvider';
 import './Product.css';
 
-function Product() {
+
+function Product({ id, title, image, price }) {
+    const [{ basket }, dispatch] = useStateValue();
+
+    const addToBasket = () => {
+        dispatch({
+            type: "ADD_TO_BASKET",
+            item: {
+                id: id,
+                title: title,
+                image: image,
+                price: price,
+
+            }
+        });
+    };
     return (
         <div className="product">
             <div className="product__info">
-                <p>{"Title"}</p>
+                <p>{title}</p>
                 <p className="product__price">
-                    <strong>{/**price */}лв.</strong>
+                    <strong>${price}</strong>
                 </p>
             </div>
-            <img src="" alt="Some photo" />
-            <button>Add to Basket</button>
+            <img src={image} alt="Some photo" />
+            <button onClick={addToBasket}>Add to Basket</button>
 
         </div>
     )

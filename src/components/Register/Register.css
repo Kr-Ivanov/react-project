@@ -1,4 +1,4 @@
-.login{
+.register{
     height: 100vh;
     background-color: white;
     display: flex;
@@ -8,7 +8,7 @@
 }
 
 
-.login__logo{
+.register__logo{
     margin-top: 20px;
     margin-bottom: 20px;
     object-fit: contain;
@@ -17,7 +17,7 @@
     margin-right: auto;
 }
 
-.login__container{
+.register__container{
     width: 200px;
     height: fit-content;
     display: flex;
@@ -27,29 +27,29 @@
     padding: 20px;
 }
 
-.login__container > h1 {
+.register__container > h1 {
     font-weight: 500;
     margin-bottom: -20px;
 }
 
-.login__container > form > h5 {
+.register__container > form > h5 {
     
     margin-bottom: 5px;
 }
 
-.login__container > form > input {
+.register__container > form > input {
     height: 30px;
     margin-bottom: 10px;
     background-color: white;
     width: 98%;
 }
 
-.login__p {
+.register__p {
     margin-top: 15px;
     font-size: 20px;
 }
 
-.login__button-login{
+.register__button-register{
     background-color: yellow;
     border-radius: 2px;
     width: 100%;
@@ -59,7 +59,7 @@
     border-color: red;
 }
 
-.login__button-register{
+.register__button-login{
     
     border-radius: 2px;
     width: 100%;

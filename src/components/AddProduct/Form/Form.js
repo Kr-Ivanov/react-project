@@ -30,7 +30,7 @@ function Form() {
                 <p class="field">
                     <label for="image">Image</label>
                     <span class="input">
-                        <input type="text" name="imageURL" id="image" placeholder="Image" />
+                        <input type="text" name="image" id="image" placeholder="Image" />
                         <span class="actions"></span>
                     </span>
                 </p>

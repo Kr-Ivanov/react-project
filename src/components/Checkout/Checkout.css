@@ -1,8 +1,12 @@
 .checkout{
-    display: flex;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
     padding: 20px;
     background-color: white;
     height: max-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
 }
 
 .checkout__title{
@@ -14,3 +18,14 @@
 .checkout__right{
     text-align: right;
 }
+
+.checkout__products{
+    
+    display: grid;
+    grid-template-columns: 200px ;
+    margin-top: 10px;
+    margin-left: 0px;
+    grid-row-gap: 10px;
+    
+}
+

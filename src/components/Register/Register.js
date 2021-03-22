@@ -1,44 +1,48 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import "./Register.css";
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function Register() {
+
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [repeatPassword, setRepeatPassword] = useState('');
+
+    const register = (e) => {
+        e.preventDefault();
+    }
+
     return (
-        <section class="register">
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Register</legend>
-                    <p class="field">
-                        <label for="email">Email</label>
-                        <span class="input">
-                            <input type="text" name="email" id="email" placeholder="Email" />
-                            <span class="actions"></span>
-                            <i class="fas fa-user"></i>
-                        </span>
-                    </p>
-                    <p class="field">
-                        <label for="username">Username</label>
-                        <span class="input">
-                            <input type="text" name="username" id="username" placeholder="Username" />
-                            <span class="actions"></span>
-                            <i class="fas fa-user"></i>
-                        </span>
-                    </p>
-                    <p class="field">
-                        <label for="password">Password</label>
-                        <span class="input">
-                            <input type="password" name="password" id="password" placeholder="Password" />
-                            <span class="actions"></span>
-                            <i class="fas fa-key"></i>
-                        </span>
-                    </p>
-                    <input class="button" type="submit" class="submit" value="Register" />
-                </fieldset>
-            </form>
-            <h3>Already have account?</h3>
-            <Link to="/login">
-                <button>Login here</button>
+        <div className="register">
+            <Link to="/">
+                <img className="register__logo" src="/logo.png" alt="" />
             </Link>
-        </section>
+
+            <div className="register__container">
+                <h1>Register</h1>
+                <form action="">
+                    <h5>Username</h5>
+                    <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                    <h5>E-mail</h5>
+                    <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
+                    <h5>Password</h5>
+                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    <h5>Repeat password</h5>
+                    <input type="password" value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} />
+                    <button className="register__button-register" type="submit" onClick={register}>Register</button>
+                    <p className="register__p">
+                        Already have account?
+                    </p>
+                    <Link to="/login">
+                        <button className="register__button-login">Log in here</button>
+                    </Link>
+
+                </form>
+            </div>
+
+
+        </div>
     )
 }
 
