@@ -1,16 +1,30 @@
 import "./Register.css";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
+import { auth } from '../../utils/Firebase/firebase';
 
 function Register() {
-
-    const [username, setUsername] = useState('');
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
 
     const register = (e) => {
         e.preventDefault();
+
+        if ((password === repeatPassword)) {
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((auth) => {
+                    if (auth) {
+                        history.push('/login');
+                    }
+                })
+                .catch(err => console.log(err));
+        } else {
+            setPassword('');
+            setRepeatPassword('');
+            throw { error: { message: 'Passwords must match' } }
+        }
     }
 
     return (
@@ -21,9 +35,7 @@ function Register() {
 
             <div className="register__container">
                 <h1>Register</h1>
-                <form action="">
-                    <h5>Username</h5>
-                    <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                <form >
                     <h5>E-mail</h5>
                     <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
                     <h5>Password</h5>

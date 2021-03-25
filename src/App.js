@@ -1,5 +1,5 @@
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 import './App.css';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
@@ -9,9 +9,41 @@ import AddProduct from './components/AddProduct/AddProduct';
 import Orders from './components/Orders/Orders';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-
+import { auth } from './utils/Firebase/firebase';
+import { useStateValue } from './StateProvider';
+import ADMINS from './utils/Admins/Admins';
 
 function App() {
+
+    const [{ }, dispatch] = useStateValue();
+
+    useEffect(() => {
+
+        auth.onAuthStateChanged(authUser => {
+
+            if (authUser) {
+                if (ADMINS.includes(authUser.email)) {
+                    dispatch({
+                        type: 'SET_ADMIN',
+                        admin: authUser,
+                    })
+
+                } else {
+                    dispatch({
+                        type: 'SET_USER',
+                        user: authUser,
+                    })
+                }
+            } else {
+                dispatch({
+                    type: 'SET_USER',
+                    user: null,
+                })
+            }
+
+        })
+    }, [])
+
     return (
         <Router>
             <div className="app">
