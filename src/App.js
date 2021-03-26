@@ -12,6 +12,8 @@ import Register from './components/Register/Register';
 import { auth } from './utils/Firebase/firebase';
 import { useStateValue } from './StateProvider';
 import ADMINS from './utils/Admins/Admins';
+import Payment from './components/Payment/Payment';
+import AddAddress from './components/AddAddress/AddAddress';
 
 function App() {
 
@@ -26,19 +28,23 @@ function App() {
                     dispatch({
                         type: 'SET_ADMIN',
                         admin: authUser,
-                    })
+                    });
 
                 } else {
                     dispatch({
                         type: 'SET_USER',
                         user: authUser,
-                    })
+                    });
                 }
             } else {
                 dispatch({
                     type: 'SET_USER',
                     user: null,
-                })
+                });
+                dispatch({
+                    type: 'SET_ADMIN',
+                    admin: null,
+                });
             }
 
         })
@@ -48,6 +54,14 @@ function App() {
         <Router>
             <div className="app">
                 <Switch>
+                    <Route path="/add-address">
+                        <Header />
+                        <AddAddress />
+                    </Route>
+                    <Route path="/payment">
+                        <Header />
+                        <Payment />
+                    </Route>
                     <Route path="/register">
                         <Header />
                         <Register />
@@ -60,7 +74,7 @@ function App() {
                         <Header />
                         <AddProduct />
                     </Route>
-                    <Route path="/yourOrders">
+                    <Route path="/your-orders">
                         <Header />
                         <Orders />
                     </Route>

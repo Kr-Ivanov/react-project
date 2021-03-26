@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
-import SearchIcon from '@material-ui/icons/Search';
+
 import Navigation from './Navigation/Navigation';
+import SearchBar from './SearchBar/SearchBar';
 
 
 function Header() {
@@ -13,10 +14,7 @@ function Header() {
                 <img className="header__logo" src="/logo.png" alt="" />
             </Link>
 
-            <div className="header__search">
-                <input className="header__searchInput" type="text" />
-                <SearchIcon className="header__searchIcon" />
-            </div>
+            <SearchBar />
 
             <Navigation />
         </div>

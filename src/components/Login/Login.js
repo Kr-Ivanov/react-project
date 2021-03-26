@@ -13,7 +13,7 @@ function Login() {
         auth.signInWithEmailAndPassword(email, password)
             .then((auth) => {
                 if (auth) {
-                    history.push('/');
+                    history.replace('/');
                 }
             })
             .catch(err => console.log(err));

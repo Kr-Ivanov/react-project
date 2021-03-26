@@ -1,14 +1,45 @@
-import React from 'react'
-import OrderedProducts from './OrderedProducts/OrderedProducts'
+import React, { useEffect, useState } from 'react';
+import './Orders.css';
+import Order from './Order/Order'
+import { db } from '../../utils/Firebase/firebase';
+import { useStateValue } from '../../StateProvider';
 
 function Orders() {
+    const [{ basket, user }, dispatch] = useStateValue();
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        if (user) {
+            db
+                .collection('users')
+                .doc(user.uid)
+                .collection('orders')
+                .onSnapshot(snapshot => (
+                    setOrders(snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        data: doc.data(),
+                    })))
+                ));
+        } else {
+            setOrders([])
+        }
+
+
+    }, [user]);
+    if (orders.length >= 1) {
+        console.log(orders)
+    }
+
     return (
-        <div>
-            <h1>List of your orders</h1>
-            <OrderedProducts />
-            <OrderedProducts />
-            <OrderedProducts />
-            <OrderedProducts />
+        <div className="orders">
+            <h1>Your Orders</h1>
+            <div className="orders__order">
+                {orders?.map(order => (
+                    <Order order={order} />
+                ))}
+            </div>
+
+
         </div>
     )
 }
