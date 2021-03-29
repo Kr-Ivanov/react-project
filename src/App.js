@@ -14,6 +14,11 @@ import { useStateValue } from './StateProvider';
 import ADMINS from './utils/Admins/Admins';
 import Payment from './components/Payment/Payment';
 import AddAddress from './components/AddAddress/AddAddress';
+import Footer from './components/Footer/Footer';
+import PendingOrders from './components/PendingOrders/PendingOrders';
+import SentOrders from './components/SendedOrders/SentOrders';
+import OrderDetails from './components/OrderDetails/OrderDetails';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 
 function App() {
 
@@ -53,45 +58,35 @@ function App() {
     return (
         <Router>
             <div className="app">
+                <Header />
                 <Switch>
-                    <Route path="/add-address">
-                        <Header />
-                        <AddAddress />
-                    </Route>
-                    <Route path="/payment">
-                        <Header />
-                        <Payment />
-                    </Route>
-                    <Route path="/register">
-                        <Header />
-                        <Register />
-                    </Route>
-                    <Route path="/login">
-                        <Header />
-                        <Login />
-                    </Route>
-                    <Route path="/addProduct">
-                        <Header />
-                        <AddProduct />
-                    </Route>
-                    <Route path="/your-orders">
-                        <Header />
-                        <Orders />
-                    </Route>
-                    <Route path="/categories/:product">
-                        <Header />
-                        <ProductsPage />
-                    </Route>
-                    <Route path="/checkout">
-                        <Header />
-                        <Checkout />
-                    </Route>
-                    <Route path="/">
-                        <Header />
-                        <Home />
-                    </Route>
+                    <Route path="/add-address"><AddAddress /></Route>
+
+                    <Route path="/payment"><Payment /></Route>
+
+                    <Route path="/register"><Register /></Route>
+
+                    <Route path="/login"><Login /></Route>
+
+                    <Route path="/addProduct"><AddProduct /></Route>
+
+                    <Route path="/your-orders"><Orders /></Route>
+
+                    <Route path="/pending-orders"><PendingOrders /></Route>
+
+                    <Route path="/sent-orders"><SentOrders /></Route>
+
+
+                    <Route path="/checkout"><Checkout /></Route>
+                    <Route path="/categories/:product" exact component={ProductsPage} />
+                    <Route path="/categories/:product/:id" exact component={ProductDetails} />
+                    <Route path="/:order" exact component={OrderDetails} />
+
+                    <Route path="/"><Home /></Route>
+
 
                 </Switch>
+                <Footer />
             </div>
         </Router>
     );

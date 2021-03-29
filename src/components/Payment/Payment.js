@@ -11,15 +11,19 @@ const Payment = () => {
 
     const buy = () => {
 
-        db.collection('users')
+        let order = db.collection('users')
             .doc(user?.uid)
             .collection('orders')
             .doc()
-            .set({
-                basket: basket,
-                address: address,
-                amount: getBasketTotal(basket),
-            })
+
+        order.set({
+            basket: basket,
+            address: address,
+            amount: getBasketTotal(basket),
+            receiver: user.uid,
+            isSend: false,
+            id: order.id,
+        })
             .then((res) => {
                 dispatch({
                     type: 'EMPTY_BASKET'

@@ -2,6 +2,7 @@ import { useStateValue } from '../../StateProvider';
 import './Checkout.css';
 import CheckoutProduct from './CheckoutProduct/CheckoutProduct';
 import Subtotal from './Subtotal/Subtotal';
+import { v4 as uuidv4 } from 'uuid';
 
 function Checkout() {
 
@@ -26,7 +27,7 @@ function Checkout() {
 
                 {basket.map((x) => (
                     <CheckoutProduct
-                        key={x.id}
+                        key={uuidv4()}
                         id={x.id}
                         title={x.title}
                         image={x.image}

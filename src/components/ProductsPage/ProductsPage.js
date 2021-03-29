@@ -1,17 +1,41 @@
-import { Component } from 'react';
+import React, { useEffect, useState } from 'react';
+import { db } from '../../utils/Firebase/firebase';
 import Product from './Product/Product';
+import './ProductsPage.css'
 
-function ProductsPage() {
+const ProductsPage = ({ match }) => {
+
+    const [products, setProducts] = useState([]);
+    let category = (match.params.product);
+    useEffect(() => {
+        db
+            .collection('products')
+            .doc('products')
+            .collection(category)
+            .onSnapshot(snapshot => (
+                setProducts(snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    data: doc.data(),
+                })))
+            ));
+    }, []);
+    if (products.length >= 1) {
+        console.log(products)
+    }
 
 
     return (
         <div className="home">
-            <Product
-                title="Daiwa Ninja 10 ft"
-                price="30"
-                image="/reels.png"
-                id="123"
-            />
+            {products?.map(product => (
+                <Product
+                    key={product.id}
+                    id={product.id}
+                    name={product.data.name}
+                    image={product.data.image}
+                    price={product.data.price}
+                    category={category}
+                />
+            ))}
         </div>
     );
 }

@@ -23,8 +23,14 @@ function Navigation() {
                         </Link>
                     </div>
                     <div className="header__option">
-                        <Link className="header__option" to="/sendProducts" >
+                        <Link className="header__option" to="/pending-orders" >
                             <span className="header__optionLineOne">Pending</span>
+                            <span className="header__optionLineTwo">Orders</span>
+                        </Link>
+                    </div>
+                    <div className="header__option">
+                        <Link className="header__option" to="/sent-orders" >
+                            <span className="header__optionLineOne">Sent</span>
                             <span className="header__optionLineTwo">Orders</span>
                         </Link>
                     </div>
@@ -33,8 +39,6 @@ function Navigation() {
                             <span className="header__optionLineOne">Hello, {admin.email}</span>
                             <span className="header__optionLineTwo">Log out</span>
                         </Link>
-
-
                     </div>
                 </div>
                 :
