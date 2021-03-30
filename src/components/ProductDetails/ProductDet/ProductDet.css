@@ -1,0 +1,32 @@
+
+.productDet > button{
+    background-color: yellow;
+    border: 1px solid;
+    margin-top: 10px;
+    border-color: blue;
+    color: black;
+}
+
+.modal__delete{
+    margin-top: 100px;
+    height: 200px;
+    display: grid;
+    
+}
+
+.modal__edit{
+    margin-top: 100px;
+    height: 200px;
+    display: grid;
+    
+}
+
+.delete__button{
+    background-color: lightsalmon;
+    font-size: x-large;
+}
+
+.cancel__button{
+    background-color: lime;
+    font-size: x-large;
+}

@@ -20,19 +20,21 @@ function Product({ id, name, image, price, category }) {
     };
     return (
         <div className="product">
+
+            <div className="product__info">
+                <p>{name}</p>
+                <p className="product__price">
+                    <strong>${price}</strong>
+                </p>
+            </div>
             <Link className="product" to={`/categories/${category}/${id}`}>
-                <div className="product__info">
-                    <p>{name}</p>
-                    <p className="product__price">
-                        <strong>${price}</strong>
-                    </p>
-                </div>
                 <img src={image} alt="Some photo" />
-                {admin
-                    ? ''
-                    : <button onClick={addToBasket}>Add to Basket</button>
-                }
             </Link>
+            {admin
+                ? ''
+                : <button onClick={addToBasket}>Add to Basket</button>
+            }
+
 
 
 

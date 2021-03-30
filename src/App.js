@@ -19,6 +19,7 @@ import PendingOrders from './components/PendingOrders/PendingOrders';
 import SentOrders from './components/SendedOrders/SentOrders';
 import OrderDetails from './components/OrderDetails/OrderDetails';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import SearchResult from './components/SearchResult/SearchResult';
 
 function App() {
 
@@ -60,6 +61,7 @@ function App() {
             <div className="app">
                 <Header />
                 <Switch>
+                    <Route path="/search/:search" component={SearchResult} />
                     <Route path="/add-address"><AddAddress /></Route>
 
                     <Route path="/payment"><Payment /></Route>
@@ -78,9 +80,12 @@ function App() {
 
 
                     <Route path="/checkout"><Checkout /></Route>
+
                     <Route path="/categories/:product" exact component={ProductsPage} />
                     <Route path="/categories/:product/:id" exact component={ProductDetails} />
-                    <Route path="/:order" exact component={OrderDetails} />
+
+                    <Route path="/orders/:order" exact component={OrderDetails} />
+
 
                     <Route path="/"><Home /></Route>
 

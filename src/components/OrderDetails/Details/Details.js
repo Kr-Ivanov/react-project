@@ -18,10 +18,10 @@ const Details = ({ id, amount, receiver, address, basket, isSend }) => {
             </div>
 
             <div>
-                <h3>Receiver ID: {id}</h3>
+                <h3>Receiver ID: {receiver}</h3>
                 <h3>Receiver city: {address.city}</h3>
                 <h3>Receiver address: {address.address}</h3>
-                <h3>Receiver names: {address.firsName} {address.lastName}</h3>
+                <h3>Receiver names: {address.firstName} {address.lastName}</h3>
             </div>
             <div>
                 Order basket:

@@ -48,7 +48,7 @@ function Form() {
 
     return (
         <form onSubmit={addProduct}>
-            <h1>Add new Product</h1>
+
 
             <label htmlFor="name">Name</label>
             <input type="text" name="name" id="name" placeholder="Name" />

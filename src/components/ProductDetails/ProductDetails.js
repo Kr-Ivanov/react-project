@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../utils/Firebase/firebase';
+import ProductDet from './ProductDet/ProductDet';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const ProductDetails = ({ match }) => {
@@ -25,6 +27,17 @@ const ProductDetails = ({ match }) => {
     return (
         <div className="product__details">
             <h1>Product details</h1>
+            {productDetails?.map(x => (
+                <ProductDet
+                    key={uuidv4()}
+                    id={x.id}
+                    name={x.data.name}
+                    image={x.data.image}
+                    description={x.data.description}
+                    price={x.data.price}
+                    category={category}
+                />
+            ))}
 
         </div>
     )

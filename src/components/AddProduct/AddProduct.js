@@ -3,7 +3,10 @@ import Form from "./Form/Form";
 
 function AddProduct() {
     return (
-        <Form />
+        <>
+            <h1>Add new Product</h1>
+            <Form />
+        </>
     );
 }
 
