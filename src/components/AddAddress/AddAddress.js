@@ -33,19 +33,24 @@ const AddAddress = () => {
 
 
         <div className="address">
-            <form className="address__form">
-                <label htmlFor="city">City</label>
-                <input type="text" name="city" />
-                <label htmlFor="address">Address</label>
-                <input type="text" name="address" />
-                <label htmlFor="firstName">First name</label>
-                <input type="text" name="firstName" />
-                <label htmlFor="lastName">Last name</label>
-                <input type="text" name="lastName" />
-                <label htmlFor="phoneNumber">Phone number</label>
-                <input type="text" name="phoneNumber" />
-                <button type="submit" onClick={add} >Submit address</button>
-            </form>
+
+            <div className="address__container">
+                <h1>Add Address</h1>
+                <form >
+                    <h5 >City</h5>
+                    <input type="text" name="city" />
+                    <h5 >Address</h5>
+                    <input type="text" name="address" />
+                    <h5 >First name</h5>
+                    <input type="text" name="firstName" />
+                    <h5 >Last name</h5>
+                    <input type="text" name="lastName" />
+                    <h5 >Phone number</h5>
+                    <input type="text" name="phoneNumber" />
+                    <button className="address__button-address" type="submit" onClick={add} >Submit address</button>
+                </form>
+            </div>
+
         </div>
 
     )

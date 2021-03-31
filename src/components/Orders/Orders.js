@@ -3,6 +3,7 @@ import './Orders.css';
 import Order from './Order/Order'
 import { db } from '../../utils/Firebase/firebase';
 import { useStateValue } from '../../StateProvider';
+import { v4 as uuidv4 } from 'uuid';
 
 function Orders() {
     const [{ basket, user }, dispatch] = useStateValue();
@@ -35,7 +36,7 @@ function Orders() {
             <h1>Your Orders</h1>
             <div className="orders__order">
                 {orders?.map(order => (
-                    <Order order={order} />
+                    <Order key={uuidv4()} order={order} />
                 ))}
             </div>
 

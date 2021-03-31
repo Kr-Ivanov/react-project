@@ -29,7 +29,7 @@ function Checkout() {
                     <CheckoutProduct
                         key={uuidv4()}
                         id={x.id}
-                        title={x.title}
+                        name={x.name}
                         image={x.image}
                         price={x.price} />
                 ))}

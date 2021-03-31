@@ -24,10 +24,9 @@ function Form() {
                 price,
                 description,
                 image,
+                category
             }
             let product = db.collection('products')
-                .doc('products')
-                .collection(category)
                 .doc()
 
             product.set({
@@ -47,33 +46,40 @@ function Form() {
     }
 
     return (
-        <form onSubmit={addProduct}>
+        <div className="addProduct" >
 
+            <div className="addProduct__container">
+                <h1>Add new Product</h1>
+                <form onSubmit={addProduct} >
 
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="Name" />
+                    <h5>Name</h5>
+                    <input type="text" name="name" id="name" placeholder="Name" />
 
-            <label htmlFor="name">Price</label>
-            <input type="text" name="price" id="price" placeholder="Price" />
+                    <h5>Price</h5>
+                    <input type="text" name="price" id="price" placeholder="Price" />
 
-            <label htmlFor="description">Description</label>
-            <textarea rows="4" cols="45" type="text" name="description" id="description"
-                placeholder="Description"></textarea>
+                    <h5>Description</h5>
+                    <textarea rows="4" cols="45" type="text" name="description" id="description"
+                        placeholder="Description"></textarea>
 
-            <label htmlFor="image">Image</label>
-            <input type="text" name="image" id="image" placeholder="Image" />
+                    <h5>Image</h5>
+                    <input type="text" name="image" id="image" placeholder="Image" />
 
-            <label htmlFor="category">Category</label>
-            <select type="text" name="category">
-                <option>Rods</option>
-                <option>Reels</option>
-                <option>Lines</option>
-                <option>Hooks</option>
-                <option>Baits</option>
-            </select>
+                    <h5>Category</h5>
+                    <select type="text" name="category">
+                        <option>Rods</option>
+                        <option>Reels</option>
+                        <option>Lines</option>
+                        <option>Hooks</option>
+                        <option>Baits</option>
+                    </select>
 
-            <button>Add product</button>
-        </form >
+                    <button className="addProduct__button-addProduct">Add product</button>
+                </form >
+            </div>
+
+        </div>
+
     )
 }
 

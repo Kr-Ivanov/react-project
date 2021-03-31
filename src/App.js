@@ -60,37 +60,39 @@ function App() {
         <Router>
             <div className="app">
                 <Header />
-                <Switch>
-                    <Route path="/search/:search" component={SearchResult} />
-                    <Route path="/add-address"><AddAddress /></Route>
+                <div className="pageWrapper">
+                    <Switch >
+                        <Route path="/search/:search" component={SearchResult} />
+                        <Route path="/add-address"><AddAddress /></Route>
 
-                    <Route path="/payment"><Payment /></Route>
+                        <Route path="/payment"><Payment /></Route>
 
-                    <Route path="/register"><Register /></Route>
+                        <Route path="/register"><Register /></Route>
 
-                    <Route path="/login"><Login /></Route>
+                        <Route path="/login"><Login /></Route>
 
-                    <Route path="/addProduct"><AddProduct /></Route>
+                        <Route path="/addProduct"><AddProduct /></Route>
 
-                    <Route path="/your-orders"><Orders /></Route>
+                        <Route path="/your-orders"><Orders /></Route>
 
-                    <Route path="/pending-orders"><PendingOrders /></Route>
+                        <Route path="/pending-orders" ><PendingOrders /></Route>
 
-                    <Route path="/sent-orders"><SentOrders /></Route>
-
-
-                    <Route path="/checkout"><Checkout /></Route>
-
-                    <Route path="/categories/:product" exact component={ProductsPage} />
-                    <Route path="/categories/:product/:id" exact component={ProductDetails} />
-
-                    <Route path="/orders/:order" exact component={OrderDetails} />
+                        <Route path="/sent-orders"><SentOrders /></Route>
 
 
-                    <Route path="/"><Home /></Route>
+                        <Route path="/checkout" ><Checkout /></Route>
+
+                        <Route path="/categories/:product" exact component={ProductsPage} />
+                        <Route path="/categories/:product/:id" exact component={ProductDetails} />
+
+                        <Route path="/orders/:order" exact component={OrderDetails} />
 
 
-                </Switch>
+                        <Route path="/"><Home /></Route>
+
+
+                    </Switch>
+                </div>
                 <Footer />
             </div>
         </Router>

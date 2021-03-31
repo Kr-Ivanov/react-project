@@ -25,7 +25,7 @@ const PendingOrders = () => {
 
 
     return (
-        <div>
+        <div className="pendingOrders">
             <h1>Pending Orders</h1>
             {pendingOrders?.map(pendingOrder => (
                 <PendingOrder

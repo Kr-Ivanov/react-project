@@ -9,9 +9,8 @@ const ProductsPage = ({ match }) => {
     let category = (match.params.product);
     useEffect(() => {
         db
-            .collection('products')
-            .doc('products')
-            .collection(category)
+            .collectionGroup('products')
+            .where('category', '==', category)
             .onSnapshot(snapshot => (
                 setProducts(snapshot.docs.map(doc => ({
                     id: doc.id,

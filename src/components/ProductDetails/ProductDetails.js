@@ -11,7 +11,7 @@ const ProductDetails = ({ match }) => {
     const [productDetails, setProductDetails] = useState([]);
     useEffect(() => {
         db
-            .collectionGroup(category)
+            .collectionGroup('products')
             .where('id', "==", productId)
             .onSnapshot(snapshot => (
                 setProductDetails(snapshot.docs.map(doc => ({

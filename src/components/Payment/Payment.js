@@ -61,7 +61,7 @@ const Payment = () => {
                             <CheckoutProduct
                                 key={x.id}
                                 id={x.id}
-                                title={x.title}
+                                name={x.name}
                                 image={x.image}
                                 price={x.price} />
                         ))}

@@ -10,14 +10,15 @@
 .modal__delete{
     margin-top: 100px;
     height: 200px;
-    display: grid;
+    
     
 }
 
 .modal__edit{
     margin-top: 100px;
     height: 200px;
-    display: grid;
+    
+    
     
 }
 
@@ -30,3 +31,47 @@
     background-color: lime;
     font-size: x-large;
 }
+
+.modal__edit-cont{
+    height: 150vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+.modal__edit-container{
+    margin-top: 20px;
+    width: 370px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 20px;
+}
+
+.modal__edit-container > h1 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.modal__edit-container > form > h5 {
+    
+    margin-bottom: 5px;
+}
+
+.modal__edit-container > form > input {
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: white;
+    width: 98%;
+}
+
+.modal__edit-p {
+    margin-top: 15px;
+    font-size: 20px;
+}
+

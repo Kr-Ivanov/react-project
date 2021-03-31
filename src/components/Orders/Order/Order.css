@@ -7,9 +7,7 @@
 }
 
 .order__id {
-    position: absolute;
-    top: 40px;
-    right: 20px;
+    margin-bottom: 20px;
 }
 
 .order__total{

@@ -1,17 +1,20 @@
 import SearchIcon from '@material-ui/icons/Search';
 import { useHistory } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useStateValue } from '../../../StateProvider';
+
 
 
 const SearchBar = () => {
     const [searchQuery, setSearchQuery] = useState('');
+
     const [{ search }, dispatch] = useStateValue();
     const history = useHistory();
 
     const searchItems = (e) => {
 
         history.push(`/search/${searchQuery}`)
+
     }
 
 
@@ -21,6 +24,9 @@ const SearchBar = () => {
             search: searchQuery
         })
     }
+
+
+
 
 
 

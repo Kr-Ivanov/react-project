@@ -1,4 +1,11 @@
 import firebase from 'firebase';
+import functions from 'firebase-functions';
+import admin from 'firebase-admin';
+import algoliaSearch from 'algoliasearch';
+
+const ALGOLIA_APP_ID = '';
+const ALGOLIA_ADMIN_KEY = '';
+const ALGOLIA_INDEX_NAME = 'products'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDrvOONXDOWFDhDJ4Wi_RshmFUBnLBVOEE",

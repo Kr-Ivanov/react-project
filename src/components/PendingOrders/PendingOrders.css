@@ -1,4 +1,9 @@
+.pendingOrders{
+    min-height: 680px;
+}
+
 .orders__div{
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 20px;

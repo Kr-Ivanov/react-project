@@ -1,6 +1,10 @@
+
 *{
-  margin: 0;
+  margin:0px;
+  
 }
 
-
+.pageWrapper{
+  min-height: 705px;
+}
 
