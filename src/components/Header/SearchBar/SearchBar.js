@@ -25,13 +25,6 @@ const SearchBar = () => {
         })
     }
 
-
-
-
-
-
-
-
     return (
         <div className="header__search">
             <input className="header__searchInput" type="text" onChange={(e) => setSearchQuery(e.target.value)} />
