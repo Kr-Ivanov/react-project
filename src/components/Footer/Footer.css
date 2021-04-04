@@ -1,6 +1,6 @@
 .footer{
-    background-color: #14a4e6;
-    height: 200px;
+    background-color: #034f84;
+    height: 100px;
     position: relative;
     bottom: 0;
     display: flex;
@@ -8,10 +8,10 @@
     align-items: center;
 }
 
+
 .footer__links {
-    font-size: 18pt;;
-    margin-top: 40px;
-    color: yellow;
+    font-size: 18pt;
+    color: #cc4545;
     display: flex;
     flex-direction: column;
     margin-left: 10px;

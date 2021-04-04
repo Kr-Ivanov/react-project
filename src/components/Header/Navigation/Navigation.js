@@ -36,7 +36,7 @@ function Navigation() {
                     </div>
                     <div className="header__option">
                         <Link className="header__option" to="/" onClick={logout} >
-                            <span className="header__optionLineOne">Hello, {admin.email}</span>
+                            <span className="header__optionLineOne"><strong>Hello, {admin.email}</strong> </span>
                             <span className="header__optionLineTwo">Log out</span>
                         </Link>
                     </div>

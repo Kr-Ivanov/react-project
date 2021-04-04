@@ -4,12 +4,16 @@ import './Footer.css';
 const Footer = () => {
     return (
         <div className="footer">
-            <Link className="footer__links" to="/about">
-                <span>About</span>
-            </Link>
-            <Link className="footer__links" to="/contacts">
-                <span>Contacts</span>
-            </Link>
+            <ul>
+                <Link className="footer__links" to="/about">
+                    <li><strong>About us</strong></li>
+                </Link>
+                <Link className="footer__links" to="/contacts">
+                    <li><strong>Contacts</strong></li>
+                </Link>
+
+            </ul>
+
 
         </div>
     )

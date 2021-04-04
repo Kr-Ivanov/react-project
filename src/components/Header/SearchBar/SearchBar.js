@@ -13,7 +13,7 @@ const SearchBar = () => {
 
     const searchItems = (e) => {
 
-        history.push(`/search/${searchQuery}`)
+        history.replace(`/search/${searchQuery}`)
 
     }
 

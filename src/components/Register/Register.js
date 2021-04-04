@@ -16,15 +16,19 @@ function Register() {
             auth.createUserWithEmailAndPassword(email, password)
                 .then((auth) => {
                     if (auth) {
-                        history.push('/login');
+                        history.replace('/login');
                     }
                 })
-                .catch(err => console.log(err));
+                .catch(error => {
+                    throw new Error(error.message)
+                });
         } else {
             setPassword('');
             setRepeatPassword('');
-            throw { error: { message: 'Passwords must match' } }
+            throw new Error('Passwords must match')
         }
+
+
     }
 
     return (

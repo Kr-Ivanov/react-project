@@ -16,7 +16,9 @@ function Login() {
                     history.replace('/');
                 }
             })
-            .catch(err => console.log(err));
+            .catch(error => {
+                throw new Error(error.message)
+            });
     }
 
     return (

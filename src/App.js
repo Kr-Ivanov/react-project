@@ -20,6 +20,8 @@ import SentOrders from './components/SendedOrders/SentOrders';
 import OrderDetails from './components/OrderDetails/OrderDetails';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import SearchResult from './components/SearchResult/SearchResult';
+import About from './components/About/About';
+import Contacts from './components/Contacts/Contacts';
 
 function App() {
 
@@ -78,8 +80,8 @@ function App() {
                         <Route path="/pending-orders" ><PendingOrders /></Route>
 
                         <Route path="/sent-orders"><SentOrders /></Route>
-
-
+                        <Route path="/contacts" ><Contacts /></Route>
+                        <Route path="/about" ><About /></Route>
                         <Route path="/checkout" ><Checkout /></Route>
 
                         <Route path="/categories/:product" exact component={ProductsPage} />
