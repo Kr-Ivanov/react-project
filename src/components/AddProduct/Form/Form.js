@@ -72,6 +72,7 @@ function Form() {
                         <option>Lines</option>
                         <option>Hooks</option>
                         <option>Baits</option>
+                        <option>Floats</option>
                     </select>
 
                     <button className="addProduct__button-addProduct">Add product</button>
