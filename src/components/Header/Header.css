@@ -2,7 +2,7 @@
     height: 80px;
     display: flex;
     align-items: center;
-    background-color: #034f84;
+    background-color: #10316b;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -13,6 +13,7 @@
     object-fit: contain;
     margin: 0 20px;
     margin-top: -15px;
+    
 }
 
 .header__search{
@@ -53,7 +54,7 @@
 
 
 .header__option{
-    color: white;
+    color: #dee1ec;
     display: flex;
     flex-direction: column;
     margin-left: 10px;

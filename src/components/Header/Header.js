@@ -9,15 +9,18 @@ function Header() {
 
 
     return (
-        <div className="header">
-            <Link to="/">
-                <img className="header__logo" src="/logo.png" alt="" />
-            </Link>
+        <>
 
-            <SearchBar />
+            <div className="header">
+                <Link to="/">
+                    <img className="header__logo" src="/logo.png" alt="" />
+                </Link>
 
-            <Navigation />
-        </div>
+                <SearchBar />
+
+                <Navigation />
+            </div>
+        </>
     )
 }
 

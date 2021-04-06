@@ -16,7 +16,7 @@ function Register() {
             auth.createUserWithEmailAndPassword(email, password)
                 .then((auth) => {
                     if (auth) {
-                        history.replace('/login');
+                        history.replace('/');
                     }
                 })
                 .catch(error => {

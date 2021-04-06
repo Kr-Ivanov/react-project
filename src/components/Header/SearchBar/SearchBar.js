@@ -8,22 +8,20 @@ import { useStateValue } from '../../../StateProvider';
 const SearchBar = () => {
     const [searchQuery, setSearchQuery] = useState('');
 
-    const [{ search }, dispatch] = useStateValue();
+    //const [{ search }, dispatch] = useStateValue();
     const history = useHistory();
 
     const searchItems = (e) => {
-
         history.replace(`/search/${searchQuery}`)
-
     }
 
 
-    if (search != searchQuery) {
-        dispatch({
-            type: 'SEARCH_VALUE',
-            search: searchQuery
-        })
-    }
+    //if (search != searchQuery) {
+    //    dispatch({
+    //        type: 'SEARCH_VALUE',
+    //        search: searchQuery
+    //    })
+    //}
 
     return (
         <div className="header__search">

@@ -7,10 +7,11 @@ import { db } from '../../../utils/Firebase/firebase';
 
 
 const ProductDet = ({ id, name, image, description, price, category }) => {
-    const [{ admin, user, basket }, dispatch] = useStateValue();
+    const [{ admin, user, }, dispatch] = useStateValue();
     const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false)
     const [editModalIsOpen, setEditModalIsOpen] = useState(false)
     const history = useHistory();
+    console.log(category);
 
     const editDoc = (e) => {
         e.preventDefault()
@@ -66,16 +67,14 @@ const ProductDet = ({ id, name, image, description, price, category }) => {
             <img src={image} alt="" />
             <p>{description}</p>
             <p>{price}</p>
-            {admin &&
-                <button onClick={() => setEditModalIsOpen(true)}>Edit</button>
-            }
-            {admin &&
+            {admin
+                ?
+                <button onClick={() => setEditModalIsOpen(true)}>Edit</button> &&
                 <button onClick={() => setDeleteModalIsOpen(true)}>Delete</button>
-
-            }
-            {user &&
+                :
                 <button onClick={addToBasket}>Add to basket</button>
             }
+
             <Modal className="modal__delete" isOpen={deleteModalIsOpen} ariaHideApp={false}>
                 <h2>Are you sure, you want to delete this item</h2>
                 <button className="delete__button" onClick={deleteDoc}>Delete Item</button>
@@ -100,12 +99,13 @@ const ProductDet = ({ id, name, image, description, price, category }) => {
                             <input type="text" name="imageEdited" id="image" placeholder="Image" defaultValue={image} />
 
                             <h5 >Category</h5>
-                            <select type="text" name="category" selected={category} >
+                            <select type="text" name="category" defaultValue={category} >
                                 <option value="Rods">Rods</option>
                                 <option value="Reels">Reels</option>
                                 <option value="Lines">Lines</option>
                                 <option value="Hooks">Hooks</option>
                                 <option value="Baits">Baits</option>
+                                <option value="Floats">Floats</option>
                             </select>
                             <button type="submit" className="edit__button" >Edit Item</button>
                         </form>
