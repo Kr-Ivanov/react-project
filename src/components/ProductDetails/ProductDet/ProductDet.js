@@ -69,8 +69,10 @@ const ProductDet = ({ id, name, image, description, price, category }) => {
             <p>{price}</p>
             {admin
                 ?
-                <button onClick={() => setEditModalIsOpen(true)}>Edit</button> &&
-                <button onClick={() => setDeleteModalIsOpen(true)}>Delete</button>
+                <>
+                    <button onClick={() => setEditModalIsOpen(true)}>Edit</button>
+                    <button onClick={() => setDeleteModalIsOpen(true)}>Delete</button>
+                </>
                 :
                 <button onClick={addToBasket}>Add to basket</button>
             }

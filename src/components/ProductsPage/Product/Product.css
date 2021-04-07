@@ -24,6 +24,7 @@ margin-bottom: 15px;
 
 .product > button {
     background-color: yellow;
+    font-weight: bold;
     border: 1px solid;
     margin-top: 10px;
     border-color: blue;

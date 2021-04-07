@@ -18,6 +18,8 @@ Also could see history of sended orders.
 
 ### The backend is provided from Firebase
 
+### The errors arn`t handled, when login and register if throw error, there throw error and app crash, will be fixed till 11.04. To don`t throw error must use password with minimum 6 digits.
+
 
 
 
