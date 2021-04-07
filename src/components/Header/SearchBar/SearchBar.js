@@ -12,7 +12,7 @@ const SearchBar = () => {
     const history = useHistory();
 
     const searchItems = (e) => {
-        history.replace(`/search/${searchQuery}`)
+        history.push(`/search/${searchQuery}`)
     }
 
 
