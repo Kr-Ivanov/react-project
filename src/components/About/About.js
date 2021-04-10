@@ -1,5 +1,5 @@
-
 import React, { Component } from 'react'
+import './About.css';
 
 export default class About extends Component {
     render() {
@@ -7,11 +7,15 @@ export default class About extends Component {
             <div className="about">
                 <h1>About us</h1>
                 <article className="about__article">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nobis assumenda earum maiores quis hic asperiores culpa velit, in ut! Voluptate veritatis sed similique amet nulla numquam cum at? Excepturi.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, repellat! Eligendi non error, labore incidunt explicabo officia modi ab fuga veniam dolorum reprehenderit, qui possimus. Quidem amet alias quia commodi!
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam nulla inventore minus molestiae debitis necessitatibus, facilis doloremque laborum quisquam dolore iste minima? Alias, consequuntur perferendis suscipit eius non fugit omnis!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia consectetur quaerat inventore id reiciendis, rem quibusdam excepturi repellendus ducimus velit rerum nemo voluptatibus beatae illum. Beatae, tempore eius. Deleniti, laborum.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam quasi aliquam eligendi incidunt rerum excepturi saepe? Commodi iste exercitationem ipsam repudiandae possimus quia perferendis eveniet aspernatur, ut, adipisci voluptatibus? Recusandae?
+                Fishing-store is an elite company, leader in the sales of fishing tackles. We have over 10 years of experience in the area. This allows us to work accurately, quickly and with great quality. Our thousands of clients respect that and appreciate it every day. Our team has experience in many areas like publishing fishing magazines and newspapers, producing a fishing TV-series as well as tackle trading-both face-to-face and online, and much, much more.
+ 
+ "Fishing-store" has 1 big fishing tackle shop behind it, all situated in the capital of Bulgaria – Sofia. We have over 70 000 products at stock from many of the big brands. This online shop offers a huge amount of quality tackles, clothing, shoes and more. All the goods you order are in stock either in our shops or storages.
+  
+ The team that operates and maintains "Fishing-store" is very popular in Bulgaria. They film fishing movies for a wide variety of fishing. The team has many experts in their ranks, some of them are the national representatives on world championships. This allows us to pick the most cutting-edge tackles of the best quality for you.
+  
+ It is very important to us, that every client receives the best for what they pay, get it as fast as possible, and if desired – receive competent consultation for their purchase. We are one of the biggest traders of fishing tackle in Bulgaria, and thanks to the big transfers of goods we have going on, we are offered some of the best prices, from which the customer benefits. Our goal is to sell everything at accessible prices, which becomes possible thanks to the fact, that most of our goods are imported directly from the producers, and we are distributors for the rest, insuring we get and offer the best prices.
+  
+ The aim of "Fishing-store" is to sell as big of a choice of tackles as possible on the territory of Europe and the rest of the world at the best possible conditions of transportation and payment. The orders made in working days before 12:00 CET will be processed, packaged and sent the same day, just so you don’t lose time in waiting and to have more time for fishing.
                 </article>
 
             </div>
