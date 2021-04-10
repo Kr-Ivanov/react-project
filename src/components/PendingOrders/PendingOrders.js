@@ -27,14 +27,17 @@ const PendingOrders = () => {
     return (
         <div className="pendingOrders">
             <h1>Pending Orders</h1>
-            {pendingOrders?.map(pendingOrder => (
-                <PendingOrder
-                    key={pendingOrder.id}
-                    id={pendingOrder.id}
-                    amount={pendingOrder.data.amount}
-                    receiver={pendingOrder.data.receiver}
-                    isSend={pendingOrder.data.isSend} />
-            ))}
+            {pendingOrders.length >= 1 ?
+                pendingOrders.map(pendingOrder => (
+                    <PendingOrder
+                        key={pendingOrder.id}
+                        id={pendingOrder.id}
+                        amount={pendingOrder.data.amount}
+                        receiver={pendingOrder.data.receiver}
+                        isSend={pendingOrder.data.isSend} />
+                ))
+                : <h1>There are no pending orders</h1>
+            }
         </div>
     )
 }

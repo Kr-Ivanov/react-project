@@ -33,16 +33,18 @@ const SearchResult = ({ match }) => {
     return (
         <div>
             <div className="container">
-                {filteredProducts?.map(product => (
-                    <Product
-                        key={product.id}
-                        id={product.id}
-                        name={product.data.name}
-                        image={product.data.image}
-                        price={product.data.price}
-                        category={product.data.category}
-                    />
-                ))}
+                {filteredProducts.length >= 1
+                    ? filteredProducts.map(product => (
+                        <Product
+                            key={product.id}
+                            id={product.id}
+                            name={product.data.name}
+                            image={product.data.image}
+                            price={product.data.price}
+                            category={product.data.category}
+                        />
+                    ))
+                    : <h1>We found 0 products on "{search}" criteria</h1>}
             </div>
 
         </div>

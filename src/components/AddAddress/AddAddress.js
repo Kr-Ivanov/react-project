@@ -1,6 +1,8 @@
 import './AddAddress.css'
 import { useHistory } from 'react-router-dom';
 import { useStateValue } from '../../StateProvider';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AddAddress = () => {
     const history = useHistory();
     const [{ address }, dispatch] = useStateValue();
@@ -26,6 +28,8 @@ const AddAddress = () => {
                 }
             });
             history.push('payment');
+        } else {
+            toast.error('All fields must be filled!')
         }
     }
 
@@ -33,7 +37,9 @@ const AddAddress = () => {
 
 
         <div className="address">
-
+            <ToastContainer
+                position='top-center'
+            />
             <div className="address__container">
                 <h1>Add Address</h1>
                 <form >

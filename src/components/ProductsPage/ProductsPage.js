@@ -17,7 +17,7 @@ const ProductsPage = ({ match }) => {
                     data: doc.data(),
                 })))
             ));
-    }, []);
+    }, [category]);
     if (products.length >= 1) {
         console.log(products)
     }

@@ -22,6 +22,7 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import SearchResult from './components/SearchResult/SearchResult';
 import About from './components/About/About';
 import Contacts from './components/Contacts/Contacts';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 function App() {
 
@@ -56,44 +57,33 @@ function App() {
             }
 
         })
-    }, [])
+    }, [dispatch])
 
     return (
         <Router>
             <div className="app">
                 <Header />
                 <div className="pageWrapper">
-                    <Switch >
-                        <Route path="/search/:search" component={SearchResult} />
-                        <Route path="/add-address"><AddAddress /></Route>
-
-                        <Route path="/payment"><Payment /></Route>
-
-                        <Route path="/register"><Register /></Route>
-
-                        <Route path="/login"><Login /></Route>
-
-                        <Route path="/addProduct"><AddProduct /></Route>
-
-                        <Route path="/your-orders"><Orders /></Route>
-
-                        <Route path="/pending-orders" ><PendingOrders /></Route>
-
-                        <Route path="/sent-orders"><SentOrders /></Route>
-                        <Route path="/contacts" ><Contacts /></Route>
-                        <Route path="/about" ><About /></Route>
-                        <Route path="/checkout" ><Checkout /></Route>
-
-                        <Route path="/categories/:product" exact component={ProductsPage} />
-                        <Route path="/categories/:product/:id" exact component={ProductDetails} />
-
-                        <Route path="/orders/:order" exact component={OrderDetails} />
-
-
-                        <Route path="/"><Home /></Route>
-
-
-                    </Switch>
+                    <ErrorBoundary>
+                        <Switch >
+                            <Route path="/search/:search" component={SearchResult} />
+                            <Route path="/add-address"><AddAddress /></Route>
+                            <Route path="/payment"><Payment /></Route>
+                            <Route path="/register"><Register /></Route>
+                            <Route path="/login"><Login /></Route>
+                            <Route path="/addProduct"><AddProduct /></Route>
+                            <Route path="/your-orders"><Orders /></Route>
+                            <Route path="/pending-orders" ><PendingOrders /></Route>
+                            <Route path="/sent-orders"><SentOrders /></Route>
+                            <Route path="/contacts" ><Contacts /></Route>
+                            <Route path="/about" ><About /></Route>
+                            <Route path="/checkout" ><Checkout /></Route>
+                            <Route path="/categories/:product" exact component={ProductsPage} />
+                            <Route path="/categories/:product/:id" exact component={ProductDetails} />
+                            <Route path="/orders/:order" exact component={OrderDetails} />
+                            <Route path="/"><Home /></Route>
+                        </Switch>
+                    </ErrorBoundary>
                 </div>
                 <Footer />
             </div>

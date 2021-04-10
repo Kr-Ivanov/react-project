@@ -2,6 +2,8 @@ import "./Register.css";
 import { Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { auth } from '../../utils/Firebase/firebase';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
     const history = useHistory();
@@ -20,12 +22,12 @@ function Register() {
                     }
                 })
                 .catch(error => {
-                    throw new Error(error.message)
+                    toast.error(error.message)
                 });
         } else {
             setPassword('');
             setRepeatPassword('');
-            throw new Error('Passwords must match')
+            toast.error('Passwords must match')
         }
 
 
@@ -33,6 +35,9 @@ function Register() {
 
     return (
         <div className="register">
+            <ToastContainer
+                position='top-center'
+            />
             <Link to="/">
                 <img className="register__logo" src="/logo.png" alt="" />
             </Link>

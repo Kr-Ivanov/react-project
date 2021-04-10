@@ -16,7 +16,7 @@ const OrderDetails = ({ match }) => {
                     data: doc.data(),
                 })))
             ));
-    }, []);
+    }, [orderId]);
     if (orderDetails !== undefined) {
         console.log(orderDetails);
     }

@@ -1,7 +1,9 @@
 import { Link, useHistory } from "react-router-dom";
 import { useState } from 'react';
-import './Login.css';
 import { auth } from '../../utils/Firebase/firebase';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './Login.css';
 
 function Login() {
     const history = useHistory();
@@ -17,12 +19,17 @@ function Login() {
                 }
             })
             .catch(error => {
-                throw new Error(error.message)
+                toast.error(error.message);
             });
     }
 
     return (
+
+
         <div className="login">
+            <ToastContainer
+                position='top-center'
+            />
             <Link to="/">
                 <img className="login__logo" src="/logo.png" alt="" />
             </Link>
@@ -47,6 +54,8 @@ function Login() {
 
 
         </div>
+
+
 
     )
 }

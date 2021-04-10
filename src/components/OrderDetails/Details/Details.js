@@ -1,18 +1,28 @@
 import { db } from "../../../utils/Firebase/firebase";
+import { useHistory } from 'react-router-dom';
 import CheckoutProduct from "../../Checkout/CheckoutProduct/CheckoutProduct";
 import { v4 as uuidv4 } from 'uuid';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Details = ({ id, amount, receiver, address, basket, isSend }) => {
+    const history = useHistory();
     const sendProducts = () => {
         db.collection('users')
             .doc(receiver)
             .collection('orders')
             .doc(id)
             .update({ 'isSend': true })
+            .catch(error => toast.error(error.message));
+        history.replace('/pending-orders');
+
     }
     return (
         <div className='order__details-container'>
+            <ToastContainer
+                position='top-center'
+            />
             <div>
                 Order #{id}
             </div>

@@ -1,5 +1,7 @@
 import { db } from '../../../utils/Firebase/firebase';
 import { useHistory } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Form.css'
 
 function Form() {
@@ -41,13 +43,17 @@ function Form() {
                     history.replace(`/categories/${category}`)
 
                 })
-                .catch(err => console.log(err));
+                .catch(error => toast.error(error.message));
+        } else {
+            toast.error('All fields must be filled!')
         }
     }
 
     return (
         <div className="addProduct" >
-
+            <ToastContainer
+                position='top-center'
+            />
             <div className="addProduct__container">
                 <h1>Add new Product</h1>
                 <form onSubmit={addProduct} >

@@ -4,6 +4,7 @@ import ProductDet from './ProductDet/ProductDet';
 import { v4 as uuidv4 } from 'uuid';
 
 
+
 const ProductDetails = ({ match }) => {
     let category = (match.params.product)
     let productId = (match.params.id);
@@ -18,14 +19,15 @@ const ProductDetails = ({ match }) => {
                     id: doc.id,
                     data: doc.data(),
                 })))
-            ));
-    }, []);
+            ))
+    }, [productId]);
     if (productDetails !== undefined) {
         console.log(productDetails);
     }
 
     return (
         <div className="product__details">
+
             <h1>Product details</h1>
             {productDetails?.map(x => (
                 <ProductDet

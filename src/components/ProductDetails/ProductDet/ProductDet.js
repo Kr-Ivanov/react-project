@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import Modal from 'react-modal';
 import './ProductDet.css';
 import { db } from '../../../utils/Firebase/firebase';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ProductDet = ({ id, name, image, description, price, category }) => {
@@ -36,16 +38,24 @@ const ProductDet = ({ id, name, image, description, price, category }) => {
                     image: imageEdited,
                     category: categoryEdited,
                 })
+                .catch(error => toast.error(error.message))
+            history.replace(`/categories/${categoryEdited}`);
+        } else {
+            toast.error('All fields must be field!')
         }
-        history.push(`/categories/${categoryEdited}`);
+
     }
 
     const deleteDoc = () => {
         db.collection('products')
             .doc(id)
             .delete()
-            .then(() => setDeleteModalIsOpen(false));
+            .then(() => setDeleteModalIsOpen(false))
+            .catch(error => console.log(error.message))
+
+
         history.replace(`/categories/${category}`);
+
     }
 
     const addToBasket = () => {
@@ -63,6 +73,9 @@ const ProductDet = ({ id, name, image, description, price, category }) => {
 
     return (
         <div className="productDet">
+            <ToastContainer
+                position='top-center'
+            />
             <h2>{name}</h2>
             <img src={image} alt="" />
             <p>{description}</p>
@@ -78,6 +91,9 @@ const ProductDet = ({ id, name, image, description, price, category }) => {
             }
 
             <Modal className="modal__delete" isOpen={deleteModalIsOpen} ariaHideApp={false}>
+                <ToastContainer
+                    position='top-center'
+                />
                 <h2>Are you sure, you want to delete this item</h2>
                 <button className="delete__button" onClick={deleteDoc}>Delete Item</button>
                 <button className="cancel__button" onClick={() => setDeleteModalIsOpen(false)}>Cancel</button>

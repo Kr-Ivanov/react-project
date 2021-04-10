@@ -4,12 +4,15 @@ import CheckoutProduct from '../Checkout/CheckoutProduct/CheckoutProduct';
 import { getBasketTotal } from "../../reducer";
 import { db } from '../../utils/Firebase/firebase';
 import { useHistory } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Payment = () => {
     const [{ basket, address, user }, dispatch] = useStateValue();
     const history = useHistory();
 
-    const buy = () => {
+    const buy = (e) => {
+        e.target.disabled = true;
 
         let order = db.collection('users')
             .doc(user?.uid)
@@ -24,18 +27,21 @@ const Payment = () => {
             isSend: false,
             id: order.id,
         })
-            .then((res) => {
+            .then(() => {
                 dispatch({
                     type: 'EMPTY_BASKET'
                 });
                 history.replace('/');
             })
-            .catch(err => console.log(err));
+            .catch(error => toast.error(error.message));
 
     }
 
     return (
         <div className="payment">
+            <ToastContainer
+                position='top-center'
+            />
             <div className="payment__container">
                 <h1>Checkout({basket.length} items)</h1>
                 <div className="payment__section">
@@ -75,7 +81,7 @@ const Payment = () => {
                     </div>
                     <div className="payment__details">
                         <p><strong> Order Total: ${getBasketTotal(basket)}</strong></p>
-                        <button className="payment__details-button" onClick={buy}>Buy Now</button>
+                        <button className="payment__details-button" onClick={buy} disabled={false}>Buy Now</button>
                     </div>
 
                 </div>
