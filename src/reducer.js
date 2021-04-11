@@ -23,17 +23,6 @@ export const reducer = (state, action) => {
                 ...state,
                 basket: [...state.basket, action.item],
             };
-        case 'ADD_ERROR':
-            return {
-                ...state,
-                error: action.error
-            }
-
-        case 'RESOLVE_ERROR':
-            return {
-                ...state,
-                errors: [],
-            };
         case 'SEARCH_VALUE':
             return {
                 ...state,
