@@ -39,7 +39,7 @@ const Details = ({ id, amount, receiver, address, basket, isSend }) => {
                 <CheckoutProduct
                     key={uuidv4()}
                     id={item.id}
-                    title={item.title}
+                    name={item.name}
                     image={item.image}
                     price={item.price}
                     hideButton
