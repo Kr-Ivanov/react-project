@@ -94,7 +94,7 @@ const ProductDet = ({ id, name, image, description, price, category }) => {
                 <ToastContainer
                     position='top-center'
                 />
-                <h2>Are you sure, you want to delete this item</h2>
+                <h2>Are you sure, you want to delete this item ?</h2>
                 <button className="delete__button" onClick={deleteDoc}>Delete Item</button>
                 <button className="cancel__button" onClick={() => setDeleteModalIsOpen(false)}>Cancel</button>
             </Modal>
